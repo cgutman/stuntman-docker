@@ -11,6 +11,7 @@ RUN set -ex && \
     apt-get install -y g++ && \
     apt-get install -y make && \
     apt-get install -y git && \
+    apt-get install -y coreutils && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/*
 
@@ -18,4 +19,4 @@ RUN cd /opt && git clone https://github.com/jselbie/stunserver.git && cd stunser
 
 WORKDIR /opt/stunserver
 
-ENTRYPOINT ["/opt/stunserver/stunserver"]
+ENTRYPOINT ["/usr/bin/stdbuf", "-oL", "/opt/stunserver/stunserver"]
