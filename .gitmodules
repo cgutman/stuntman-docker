@@ -1,0 +1,3 @@
+[submodule "stunserver"]
+	path = stunserver
+	url = https://github.com/jselbie/stunserver.git
