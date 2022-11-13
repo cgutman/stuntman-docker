@@ -3,11 +3,11 @@
 set -e
 
 # AMD64
-docker build -t cgutman/stuntman-server:manifest-amd64 --build-arg ARCH=amd64/ .
+docker build --pull -t cgutman/stuntman-server:manifest-amd64 --build-arg ARCH=amd64/ .
 docker push cgutman/stuntman-server:manifest-amd64
 
 # ARM64
-docker build -t cgutman/stuntman-server:manifest-arm64v8 --build-arg ARCH=arm64v8/ .
+docker build --pull -t cgutman/stuntman-server:manifest-arm64v8 --build-arg ARCH=arm64v8/ .
 docker push cgutman/stuntman-server:manifest-arm64v8
 
 # Create combined multi-arch manifest
